@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LocationIcon from '../Assets/LocationIcon.svg'
 
 
 
@@ -116,7 +117,7 @@ const CalenderInput = () => {
         <div className="d-flex" >
             <div className="app">
                 <div className='before_conv'>
-                    <p>Gregorian to Hijri Converter</p>
+                    <p><img src={LocationIcon} alt="" />Gregorian to Hijri Converter</p>
                     <button>switch</button>
                 </div>
                 <h5>Select a Date to Convert</h5>

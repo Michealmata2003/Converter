@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import DateofBirth from './DateofBirth';
 import CurrentDate from './CurrentDate';
-
+import AttentionIcon from '../Assets/Attention.svg';
 const Age = () => {
     const [currentDate, setCurrentDate] = useState('');
     const [birthDate, setBirthDate] = useState('');
@@ -36,7 +36,7 @@ const Age = () => {
 
     return (
         <div>
-            <div>
+            <div style={{ padding: '30px',backgroundColor:'#ffffff'} }>
                 <div className='ageContainer'>
                     <DateofBirth birthDate={birthDate} setBirthDate={setBirthDate} />
                     <section >
@@ -53,7 +53,12 @@ const Age = () => {
                     </section>
                     <CurrentDate currentDate={currentDate} setCurrentDate={setCurrentDate} />
                 </div>
-                <button onClick={calculateAge}>Calculate Age</button>
+                <div style={{ width: "100%", justifyContent: 'space-between', display: 'flex' }}>
+                    <p style={{textAlign:'center'}}>
+                        <img src={AttentionIcon} alt="" />
+                        we use midmarket rate</p>
+                    <button onClick={calculateAge}>Calculate Age</button>
+                </div>
 
             </div>
             <div className='age_result'>

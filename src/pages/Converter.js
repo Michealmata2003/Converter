@@ -1,38 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../style/InputComp.css';
 import main_bg from '../Assets/main_bg.png';
-// import age from '../Assets/age.svg';
+import ageIcon from '../Assets/age.svg';
+import timelineIcon from '../Assets/Timeline.svg';
 import Age from '../components/age';
 import Calender from '../components/calender';
 import Timeline from '../components/timeline';
 
 const Converter = () => {
+  const [showAgeComp, setShowAgeComp] = useState(true);
+  const [showCalenderComp, setShowCalenderComp] = useState(false);
+  const [showTimelineComp, setShowTimelineComp] = useState(false);
+
+  const [ageaction, setAgeAction] = useState(true);
+  const [calaction, setCalAction] = useState(false);
+  const [timeaction, setTimeAction] = useState(false);
+
+  const handleShowAgeComp = () => {
+    setShowAgeComp(true)
+    setAgeAction(true)
+    setCalAction(false)
+    setTimeAction(false)
+    setShowCalenderComp(false)
+    setShowTimelineComp(false)
+  }
+  const handleShowCalComp = () => {
+    setShowAgeComp(false)
+    setAgeAction(false)
+    setCalAction(true)
+    setTimeAction(false)
+    setShowCalenderComp(true)
+    setShowTimelineComp(false)
+  }
+  const handleShowTimelineComp = () => {
+    setShowAgeComp(false)
+    setShowCalenderComp(false)
+    setShowTimelineComp(true)
+    setAgeAction(false)
+    setCalAction(false)
+    setTimeAction(true)
+  }
   return (
     <div>
       <div className='main_bg'>
-        <img src={main_bg} alt='' />
+        {/* <img src={main_bg} alt='' /> */}
         <div className='input_comp'>
-          <nav>
-            <div className='age_nav'>
+          <nav >
+
+            <div onClick={handleShowAgeComp} className={ageaction ? ' age_nav' : 'cal_nav'}>
               <p>Age</p>
-              {/* <img src={age}/> */}
+              <img src={ageIcon} />
             </div>
-            <div className='cal_nav'>
+
+
+            <div onClick={handleShowCalComp} className={calaction ? ' age_nav' : 'cal_nav'}>
+              <img src={ageIcon} />
               <p>Calender</p>
             </div>
-            <div className='time_nav'>
+
+
+            <div onClick={handleShowTimelineComp} className={timeaction ? ' age_nav' : 'cal_nav'}>
+              <img src={timelineIcon} />
               <p>Timeline</p>
             </div>
+
           </nav>
-          <Age />
-          {/* <Calender /> */}
-          {/* <Timeline /> */}
+          {showAgeComp ? <Age /> : null}
+          {showCalenderComp ? <Calender /> : null}
+          {showTimelineComp ? <Timeline /> : null}
 
         </div>
         <div className='result_comp'>
-
+          <button>Save as Image</button>
         </div>
-        <button>Save as Image</button>
+
       </div>
     </div>
   )
