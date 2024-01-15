@@ -1,0 +1,353 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.input_comp {
+  width: 80%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(49, 53, 66);
+  /* padding: 20px; */
+  border-radius: 8px;
+}
+
+.input_comp nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  text-align: center;
+  margin: auto;
+}
+
+.age_nav {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 0px;
+
+  border-radius: 8px;
+}
+.ageContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.ageContainer section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.cal_nav {
+  width: 100%;
+  background-color: #BAB5B5;
+  padding: 10px 0px;
+  border-radius: 8px;
+}
+
+.time_nav {
+  width: 100%;
+  background-color: #BAB5B5;
+  padding: 10px 0px;
+  border-radius: 8px;
+}
+
+.full_datecomp {
+  width: 100%;
+  /* display: flex; */
+  justify-content: space-between;
+}
+
+.datecomp {
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: purple;
+  /* padding: 20px; */
+  border-radius: 8px;
+}
+
+.datacomp_input {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.datecomp_input section {
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+}
+
+.datecomp_input section svg {
+  border-radius: 50%;
+  padding: 4px 10px;
+  height: 100%;
+  /* width: 100%; */
+  border: 1px solid #DDDDDD;
+}
+
+.conc_sec,
+.before_conv {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 15px 0px;
+}
+
+.before_conv button {
+  padding: 6px 15px;
+  font-size: 16;
+  font-weight: 600;
+  background-color: #0071EB;
+  color: #ffffff;
+  border-radius: 8px;
+  align-items: center;
+  border: 2px;
+}
+
+.conc_sec {
+  /* display: flex; */
+  justify-content: right;
+}
+
+.conc_sec button {
+  padding: 8px 20px;
+  font-size: 16;
+  font-weight: 600;
+  background-color: #0071EB;
+  color: #ffffff;
+  border-radius: 8px;
+  align-items: center;
+  border: 2px;
+}
+
+.result_comp {
+  height: 400px;
+  width: 100%;
+  background-color: rgb(79, 110, 156);
+}
+
+
+
+:root {
+  --primary: #176ede;
+  --bg-primary: #fff;
+  --bg-secondary: #edf2f8;
+  --bg-terinary: #fafafa;
+  --body-bg: #f5f8ff;
+  --box-bg: #fff;
+  --input-bg: #f5f8ff;
+  --txt-color: #2f2d2f;
+  --txt-second-color: #ccc;
+  --border-color: #4267b2;
+  --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif !important;
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: var(--bg-secondary);
+  color: var(--txt-color);
+  height: 100%;
+}
+
+p {
+  font-size: 14px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: #d4d9e2;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.d-flex {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.app {
+  width: 100%;
+  background-color: var(--box-bg);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.d-flex .app h5 {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0px;
+}
+
+.app-container {
+  margin-bottom: 20px;
+}
+
+.app .month-select {
+  width: 100%;
+  margin: 0px 10px;
+}
+
+.app .app-select {
+  width: 20%;
+}
+
+.app .month-select select {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border-radius: 5px;
+  border-color: #ccc;
+}
+
+.app .app-select select {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border-radius: 5px;
+  border-color: #ccc;
+}
+
+/* .app .app-select:not(:last-child){
+  margin-right: 5px;
+} */
+
+/* .app-format {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f5f7;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0px
+}
+
+.app-format > p:nth-child(2){
+  font-weight: bold;
+  color: var(--primary);
+} */
+
+.age-calculator {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input,
+button {
+  margin-bottom: 15px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+button {
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+}
+
+.result-container {
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.age_result {
+  background-color: #ffffff;
+}
+
+.savedpdf {
+  background-color:#F0F0F0 ;
+  margin: auto;
+  /* padding: 10px; */
+  border-radius: 8px;
+  width: 390px;
+}
+.main_result h5{
+  /* background-color:#F0F0F0 ; */
+  background-color:#E6E6E6 ;
+  width: 100%;
+  padding: 10px 0px;
+}
+.main_result div {
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+  border-radius: 8px;
+  width: 50%;
+  /* background-color: #F0F0F0; */
+}
+
+.main_result div p:nth-child(even) {
+  /* background-color: blue; */
+  width: 100%;
+}
+.main_result div p:nth-child(odd) {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 6px 0px;
+}
+.datepicker-input {
+  /* position: absolute; */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* opacity: 0; */
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.datepicker-input::-webkit-calendar-picker-indicator {
+  /* position: absolute; */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
