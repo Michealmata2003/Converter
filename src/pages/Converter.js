@@ -6,6 +6,7 @@ import timelineIcon from '../Assets/Timeline.svg';
 import Age from '../components/age';
 import Calender from '../components/calender';
 import Timeline from '../components/timeline';
+import DateConverter from '../components/ConvertGregorian';
 
 const Converter = () => {
   const [showAgeComp, setShowAgeComp] = useState(true);
@@ -67,6 +68,7 @@ const Converter = () => {
           </nav>
           {showAgeComp ? <Age /> : null}
           {showCalenderComp ? <Calender /> : null}
+          {/* {showCalenderComp ? <DateConverter /> : null} */}
           {showTimelineComp ? <Timeline /> : null}
 
         </div>

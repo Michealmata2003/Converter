@@ -4,7 +4,7 @@ import React,{useState} from 'react';
 
 const CurrentDate = (props) => {
 //   const [currentDate, setCurrentDate] = useState('');
-  const [age, setAge] = useState(null);
+  // const [age, setAge] = useState(null);
 
   
 

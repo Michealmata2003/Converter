@@ -1,11 +1,15 @@
 {
-  "name": "coverter-app",
+  "name": "converter_app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "hijrah-date": "^1.0.3",
+    "hijri-converter": "^1.1.1",
+    "moment-hijri": "^2.1.2",
+    "npm": "^10.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",

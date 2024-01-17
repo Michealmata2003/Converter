@@ -68,3 +68,60 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+ <!-- keeping the code for future use -->
+
+ const currentYear = new Date().getFullYear();
+
+    const [selectedDate, setSelectedDate] = useState("");
+    const [selectedMonth, setSelectedMonth] = useState("");
+    const [selectedYear, setSelectedYear] = useState("");
+
+    const [finalDate, setFinalDate] = useState(null);
+
+    const [formats, setFormats] = useState([]);
+
+    const handleDateChange = (e) => {
+        let { value } = e.target;
+        setSelectedDate(value);
+        updateSelectedDate(value, selectedMonth, selectedYear);
+    };
+
+    const handleMonthChange = (e) => {
+        let { value } = e.target;
+        setSelectedMonth(value);
+        updateSelectedDate(selectedDate, value, selectedYear);
+    };
+
+    const handleYearChange = (e) => {
+        let { value } = e.target;
+        setSelectedYear(value);
+        updateSelectedDate(selectedDate, selectedMonth, value);
+    };
+
+    const updateSelectedDate = (date, month, year) => {
+        if (date && month && year) {
+            let formats = [];
+            const formattedDate = new Date(year, month - 1, date);
+            setFinalDate(formattedDate.toISOString());
+            const dt = new Date(formattedDate);
+            formats.push({
+                id: 1,
+                label: "YYYY-MM-DD",
+                date: dt.toISOString().slice(0, 10),
+            });
+            formats.push({
+                id: 2,
+                label: "MM/DD/YYYY",
+                date: `${dt.getMonth() + 1}/${dt.getDate()}/${dt.getFullYear()}`,
+            });
+            formats.push({
+                id: 3,
+                label: "DD-MM-YYYY",
+                date: `${dt.getDate()}-${dt.getMonth() + 1}-${dt.getFullYear()}`,
+            });
+            setFormats([...formats]);
+        }
+    };

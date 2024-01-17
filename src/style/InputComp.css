@@ -140,33 +140,6 @@
 
 
 
-.before_conv button {
-  padding: 6px 15px;
-  font-size: 16;
-  font-weight: 600;
-  background-color: #0071EB;
-  color: #ffffff;
-  border-radius: 8px;
-  align-items: center;
-  border: 2px;
-}
-
-.conc_sec {
-  /* display: flex; */
-  justify-content: right;
-}
-
-.conc_sec button {
-  padding: 8px 20px;
-  font-size: 16;
-  font-weight: 600;
-  background-color: #0071EB;
-  color: #ffffff;
-  border-radius: 8px;
-  align-items: center;
-  border: 2px;
-}
-
 .result_comp {
   height: 400px;
   width: 100%;
@@ -223,18 +196,38 @@ p {
   width: 100% !important;
 }
 
-
-.before_conv {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  padding: 5px 0px;
-}
 .conc_sec {
   display: flex;
   width: 100%;
   justify-content: right;
 }
+
+.before_conv button {
+  padding: 6px 15px;
+  font-size: 16;
+  font-weight: 600;
+  background-color: #0071EB;
+  color: #ffffff;
+  border-radius: 8px;
+  align-items: center;
+  border: 2px;
+}
+
+.conc_sec {
+  display: flex;
+  justify-content: right;
+}
+
+.conc_sec button {
+  font-size: 16;
+  font-weight: 600;
+  background-color: #0071EB;
+  color: #ffffff;
+  border-radius: 8px;
+  align-items: center;
+  border: 2px;
+}
+
 .d-flex .app h5 {
   width: 100%;
   text-align: center;
@@ -250,25 +243,6 @@ p {
   margin: 0px 10px;
 }
 
-.app .app-select {
-  width: 20%;
-}
-
-.app .month-select select {
-  width: 100%;
-  padding: 10px;
-  outline: none;
-  border-radius: 5px;
-  border-color: #ccc;
-}
-
-.app .app-select select {
-  width: 100%;
-  padding: 10px;
-  outline: none;
-  border-radius: 5px;
-  border-color: #ccc;
-}
 
 /* .app .app-select:not(:last-child){
   margin-right: 5px;
@@ -316,11 +290,14 @@ button {
 
 button {
   cursor: pointer;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
   padding: 10px 20px;
+  font-size: 16;
+  font-weight: 600;
+  background-color: #0071EB;
+  color: #ffffff;
+  border-radius: 4px;
+  align-items: center;
+  border: 2px;
 }
 
 .result-container {
@@ -370,6 +347,18 @@ li {
   background-color: #ffffff;
   width: 100%;
   padding: 6px 0px;
+}
+.datepicker{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.datepicker input:nth-child(odd) {
+  width: 10%;
+}
+.datepicker input:nth-child(even) {
+  width: 100%;
 }
 .datepicker-input {
   width: 100%;
