@@ -4,11 +4,12 @@ import { hijriMonthNames } from './monthName';
 import LocationIcon from '../Assets/LocationIcon.svg'
 
 
-function GregoriantoHijriConverter() {
-    const [hijriDate, setHijriDate] = useState('');
+function GregoriantoHijriConverter({onHijriDataDate,onHijriDataYear,onHijriDataMonth  , monthNamejri}) {
+    const [hijriDateDay, setHijriDateDay] = useState('');
+    const [hijriDateYear, setHijriDateYear] = useState('');
+    const [hijriDateMonth, setHijriDateMonth] = useState('');
     const [gregorianDate, setGregorianDate] = useState('');
     const [hijriMonthName, setHijriMonthName] = useState('');
-
 
 
     const convertToHijri = () => {
@@ -16,9 +17,18 @@ function GregoriantoHijriConverter() {
         const hijriDateObj = new HijrahDate(gregorianDate);
 
         if (hijriDateObj !== '') {
-            setHijriDate(`${hijriDateObj.getDate()}-${hijriDateObj.getFullYear()}-${hijriDateObj.getMonth() + 1}`);
+            // setHijriDate(`${hijriDateObj.getDate()}-${hijriDateObj.getFullYear()}-${hijriDateObj.getMonth() + 1}`);
+            setHijriDateDay(`${hijriDateObj.getDate()}`);
+            setHijriDateYear(`${hijriDateObj.getFullYear()}`);
+            setHijriDateMonth(`${hijriDateObj.getMonth() + 1}`);
             const monthName = hijriMonthNames[hijriDateObj.getMonth()];
+
             setHijriMonthName(monthName)
+            setHijriDateDay(onHijriDataDate)
+            setHijriDateYear(onHijriDataYear)
+            setHijriDateMonth(onHijriDataMonth)
+            setHijriMonthName(monthNamejri)
+
             console.log(hijriMonthName)
         } else {
             console.error('Invalid Hijrah date.');
@@ -45,7 +55,7 @@ function GregoriantoHijriConverter() {
             </div>
             <div>
                 <label>Hijri Date:</label>
-                <div>{hijriDate}</div>
+                <div>{hijriDateYear}</div>
                 <div>{hijriMonthName}</div>
             </div>
         </div>

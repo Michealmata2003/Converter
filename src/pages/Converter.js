@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import '../style/InputComp.css';
-import main_bg from '../Assets/main_bg.png';
 import ageIcon from '../Assets/age.svg';
 import calenderIcon from '../Assets/calender.svg';
 import timelineIcon from '../Assets/Timeline.svg';
@@ -9,7 +8,6 @@ import Calender from '../components/calender';
 import Timeline from '../components/timeline';
 import html2canvas from 'html2canvas';
 
-import DateConverter from '../components/ConvertGregorian';
 
 const Converter = () => {
   const componentRef = useRef(null);
@@ -18,7 +16,7 @@ const Converter = () => {
   const [showCalenderComp, setShowCalenderComp] = useState(false);
   const [showTimelineComp, setShowTimelineComp] = useState(false);
 
-  const [ageData, setAgeData] = useState(null); // State to store age data
+  const [ageData, setAgeData] = useState(null); 
 
 
   const [ageaction, setAgeAction] = useState(true);
@@ -52,6 +50,7 @@ const Converter = () => {
   const handleAgeData = (data) => {
     setAgeData(data);
   };
+ 
 
   const captureComponent = () => {
     if (componentRef.current) {
@@ -75,18 +74,18 @@ const Converter = () => {
           <nav >
             <div onClick={handleShowAgeComp} className={ageaction ? ' age_nav' : 'cal_nav'}>
               <p>Age</p>
-              <img src={ageIcon} />
+              <img src={ageIcon} alt=''/>
             </div>
 
 
             <div onClick={handleShowCalComp} className={calaction ? ' age_nav' : 'cal_nav'}>
-              <img src={calenderIcon} />
+              <img src={calenderIcon} alt='' />
               <p>Calender</p>
             </div>
 
 
             <div onClick={handleShowTimelineComp} className={timeaction ? ' age_nav' : 'cal_nav'}>
-              <img src={timelineIcon} />
+              <img src={timelineIcon} alt=''/>
               <p>Timeline</p>
             </div>
 
@@ -108,8 +107,8 @@ const Converter = () => {
                 <div>
                   {ageData && (
                     <p>
-                      Your Age  {ageData.years} <span>yrs</span>,
-                      {ageData.months} <span>months</span> ,
+                      Your Age : {ageData.years} <span>yrs</span>, 
+                      {ageData.months} <span>mos</span> , 
                       {ageData.days} <span>days</span>,
                     </p>
                   )}

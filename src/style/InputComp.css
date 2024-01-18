@@ -65,6 +65,32 @@
   margin: auto;
 
 }
+.age_result div p {
+  color: #000000;
+  font-size: 22px;
+  font-weight: 400;
+  word-spacing: 3px;
+
+}
+.age_result div p span{
+  color: #176ede;
+  text-decoration: underline;
+  font-size: 16px;
+  font-weight: 400;
+
+}
+
+.hijri_result{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  border-radius: 8px;
+  height: 50%;
+}
 .result_comp div {
   text-align: center;
   align-items: center;
@@ -146,6 +172,7 @@
   border-radius: 8px;
   justify-content: center;
 }
+
 
 .ageContainer {
   display: flex;

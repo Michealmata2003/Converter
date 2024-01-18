@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import DateofBirth from './DateofBirth';
 import CurrentDate from './CurrentDate';
 import AttentionIcon from '../Assets/Attention.svg';
+
+
 const Age = ({onAgeData}) => {
     const [currentDate, setCurrentDate] = useState('');
     const [birthDate, setBirthDate] = useState('');

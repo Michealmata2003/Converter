@@ -1,9 +1,9 @@
-import React,{useState} from 'react';
+import React from 'react';
 
 
 
 const DateofBirth = (props) => {
-  const [age, setAge] = useState(null);
+  // const [age, setAge] = useState(null);
   
 
   return (
