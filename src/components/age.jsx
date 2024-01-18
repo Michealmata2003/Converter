@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DateofBirth from './DateofBirth';
 import CurrentDate from './CurrentDate';
 import AttentionIcon from '../Assets/Attention.svg';
-const Age = () => {
+const Age = ({onAgeData}) => {
     const [currentDate, setCurrentDate] = useState('');
     const [birthDate, setBirthDate] = useState('');
 
@@ -32,6 +32,15 @@ const Age = () => {
             minutes,
             seconds,
         });
+        onAgeData({
+            years,
+            months,
+            weeks,
+            days,
+            hours,
+            minutes,
+            seconds,
+          });
     };
 
     return (
@@ -61,33 +70,7 @@ const Age = () => {
                 </div>
 
             </div>
-            <div className='age_result'>
-                <div>
-                    {age && (
-                        <p>Your Age  {age.years} years, {age.months} months, {age.days} days,</p>
-
-                    )}
-                </div>
-                <div className="savedpdf">
-
-                    {age && (
-                        <div className='main_result'>
-                            <h5>That means you have spent :</h5>
-                            <div>
-                                <p> {age.years} years,</p>
-                                <p>or {age.months} months,</p>
-                                <p>or {age.weeks} weeks,</p>
-                                <p>or {age.days} days,</p>
-                                <p>or{age.hours} hours,</p>
-                                <p>or  {age.minutes} minutes,</p>
-                                <p>or {age.seconds} seconds</p>
-                            </div>
-                        </div>
-
-                    )}
-                </div>
-
-            </div>
+            
         </div>
 
     )

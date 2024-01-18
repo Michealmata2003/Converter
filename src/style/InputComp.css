@@ -3,44 +3,106 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif !important;
-
 }
-.main_bg{
-  position: relative;
-  background-image: url('../Assets/main_bg.png');
+.main_bg {
+  /* position: relative; */
+  background-image: url("../Assets/main_bg.png");
   background-repeat: no-repeat;
-  height: 60vh;
+  height: 50vh;
   background-size: cover;
   background-position: center;
 }
-.second_bg{
+.second_bg {
   position: relative;
-  background-image: url('../Assets/second_bg.jpg');
+  background-image: url("../Assets/second_bg.png");
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 100%;
   background-size: cover;
   background-position: center;
-  z-index: -1;
+}
+.main_result {
+  position: relative;
+  padding-top: 25%;
 }
 .result_comp {
   height: 400px;
-  width: 100%;
   position: relative;
-  padding-top: 10%;
+  box-shadow: 0px 6px 12px 0px #2337504d;
+  background-color: #f0f0f0;
+  margin: auto;
+  padding-bottom: 30px;
+  border-radius: 8px;
+  width: 390px;
 }
 
+.main_result h5 {
+  background-color: #e6e6e6;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.age_result {
+  border-radius: 8px;
+  padding-bottom: 25px;
+  width: 390px;
+  position: relative;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  margin: auto;
+
+}
+.age_result div {
+  background-color: #ffffff;
+  border-radius: 8px;
+  /* padding-bottom: 10px; */
+  width: 390px;
+  position: relative;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  margin: auto;
+
+}
+.result_comp div {
+  text-align: center;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+  border-radius: 8px;
+  width: 50%;
+  height: 100%;
+  /* background-color: #2f2d2f; */
+  display: flex;
+  flex-direction: column;
+}
+.main_result div p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+  padding: 11px 0px;
+  }
+.main_result div p:nth-child(even) {
+  width: 100%;
+}
+.main_result div p:nth-child(odd) {
+  background-color: #ffffff;
+  width: 100%;
+ 
+}
 .input_comp {
   width: 80%;
   margin: auto;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  box-shadow: 0px 6px 12px 0px #2337504D;
+  box-shadow: 0px 6px 12px 0px #2337504d;
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 10%;
   z-index: 4;
-  
 }
 
 .input_comp nav {
@@ -71,27 +133,25 @@
 }
 .cal_nav {
   width: 100%;
-  background-color: #F0F5FA;
+  background-color: #f0f5fa;
   padding: 10px 0px;
   display: flex;
   border-radius: 4px;
   justify-content: center;
   gap: 5px;
   cursor: pointer;
-
 }
-.cal_nav p{
+.cal_nav p {
   padding: 10px 0px;
   border-radius: 8px;
   justify-content: center;
 }
 
-.ageContainer{
+.ageContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  
 }
 .d-flex {
   display: flex !important;
@@ -106,17 +166,16 @@
   border-radius: 8px;
   box-shadow: var(--box-shadow);
 }
-.ageContainer section{
+.ageContainer section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid #DDDDDD;
+  border: 2px solid #dddddd;
   border-radius: 50%;
 }
-.ageContainer section svg{
+.ageContainer section svg {
   margin: 10px;
 }
-
 
 .full_datecomp {
   width: 100%;
@@ -151,9 +210,8 @@
   padding: 4px 10px;
   height: 100%;
   /* width: 100%; */
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
 }
-
 
 :root {
   --primary: #176ede;
@@ -168,8 +226,6 @@
   --border-color: #4267b2;
   --box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
-
-
 
 /* body {
   font-weight: 400;
@@ -212,7 +268,7 @@ p {
   padding: 6px 15px;
   font-size: 16;
   font-weight: 600;
-  background-color: #0071EB;
+  background-color: #0071eb;
   color: #ffffff;
   border-radius: 8px;
   align-items: center;
@@ -227,7 +283,7 @@ p {
 .conc_sec button {
   font-size: 16;
   font-weight: 600;
-  background-color: #0071EB;
+  background-color: #0071eb;
   color: #ffffff;
   border-radius: 8px;
   align-items: center;
@@ -248,7 +304,6 @@ p {
   width: 100%;
   margin: 0px 10px;
 }
-
 
 /* .app .app-select:not(:last-child){
   margin-right: 5px;
@@ -281,10 +336,9 @@ p {
 label {
   display: block;
   margin-bottom: 5px;
-  color: #141E37;
+  color: #141e37;
   font-size: 16px;
   font-weight: 600;
-
 }
 
 input,
@@ -292,6 +346,7 @@ button {
   margin-bottom: 15px;
   padding: 8px;
   font-size: 16px;
+  cursor: pointer;
 }
 
 button {
@@ -299,7 +354,7 @@ button {
   padding: 10px 20px;
   font-size: 16;
   font-weight: 600;
-  background-color: #0071EB;
+  background-color: #0071eb;
   color: #ffffff;
   border-radius: 4px;
   align-items: center;
@@ -319,42 +374,8 @@ li {
   margin-bottom: 5px;
 }
 
-.age_result {
-  background-color: #ffffff;
-}
 
-.savedpdf {
-  background-color:#F0F0F0 ;
-  margin: auto;
-  /* padding: 10px; */
-  border-radius: 8px;
-  width: 390px;
-}
-.main_result h5{
-  /* background-color:#F0F0F0 ; */
-  background-color:#E6E6E6 ;
-  width: 100%;
-  padding: 10px 0px;
-}
-.main_result div {
-  text-align: center;
-  margin: auto;
-  justify-content: center;
-  border-radius: 8px;
-  width: 50%;
-  /* background-color: #F0F0F0; */
-}
-
-.main_result div p:nth-child(even) {
-  /* background-color: blue; */
-  width: 100%;
-}
-.main_result div p:nth-child(odd) {
-  background-color: #ffffff;
-  width: 100%;
-  padding: 6px 0px;
-}
-.datepicker{
+.datepicker {
   width: 100%;
   display: flex;
   justify-content: space-between;
