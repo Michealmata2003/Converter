@@ -7,12 +7,28 @@
 }
 .main_bg{
   position: relative;
-  /* z-index: -1; */
   background-image: url('../Assets/main_bg.png');
   background-repeat: no-repeat;
+  height: 60vh;
+  background-size: cover;
   background-position: center;
-  background-size: contain;
 }
+.second_bg{
+  position: relative;
+  background-image: url('../Assets/second_bg.jpg');
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+.result_comp {
+  height: 400px;
+  width: 100%;
+  position: relative;
+  padding-top: 10%;
+}
+
 .input_comp {
   width: 80%;
   margin: auto;
@@ -137,16 +153,6 @@
   /* width: 100%; */
   border: 1px solid #DDDDDD;
 }
-
-
-
-.result_comp {
-  height: 400px;
-  width: 100%;
-  position: relative;
-  padding-top: 10%;
-}
-
 
 
 :root {

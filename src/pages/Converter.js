@@ -44,10 +44,8 @@ const Converter = () => {
   return (
     <div>
       <div className='main_bg'>
-        {/* <img src={main_bg} alt='' /> */}
         <div className='input_comp'>
           <nav >
-
             <div onClick={handleShowAgeComp} className={ageaction ? ' age_nav' : 'cal_nav'}>
               <p>Age</p>
               <img src={ageIcon} />
@@ -72,10 +70,12 @@ const Converter = () => {
           {showTimelineComp ? <Timeline /> : null}
 
         </div>
-        <div className='result_comp'>
-          <button>Save as Image</button>
-        </div>
+        <div className='second_bg'>
 
+        </div>
+        {/* <div className='result_comp'>
+          <button>Save as Image</button>
+        </div> */}
       </div>
     </div>
   )

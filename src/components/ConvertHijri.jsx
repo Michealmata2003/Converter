@@ -1,30 +1,56 @@
 import React, { useState } from 'react';
-import moment from 'moment-hijri';
+import HijriConverter from 'hijri-converter';
+import { gregorianMonthNames } from './monthName';
+import LocationIcon from '../Assets/LocationIcon.svg'
 
-const DateConverter = () => {
-  const [hijriDate, setHijriDate] = useState(''); // Example Hijri date
 
-  const convertToGregorian = () => {
-    const gregorianDate = moment(hijriDate, 'iYYYY-iMM-iDD').format('YYYY-MM-DD');
-    console.log('Gregorian Date:', gregorianDate);
-    // You can use gregorianDate as needed in your application
+function App() {
+  const [hijriDate, setHijriDate] = useState('');
+  const [gregorianDate, setGregorianDate] = useState('');
+
+  const convertDate = () => {
+    try {
+      const gregorian = HijriConverter.toGregorian(
+        parseInt(hijriDate.split('-')[0], 10),
+        parseInt(hijriDate.split('-')[1], 10),
+        parseInt(hijriDate.split('-')[2], 10)
+      );
+
+      setGregorianDate(
+        `${gregorianMonthNames[gregorian.gm - 1]}-${gregorian.gy}-${String(gregorian.gm).padStart(2, '0')}-${String(
+          gregorian.gd
+        ).padStart(2, '0')}`
+        // `${gregorianMonthNames[gregorian.gm - 1]} ${gregorian.gd}, ${gregorian.gy}`
+
+      );
+    } catch (error) {
+      console.error('Error converting date:', error.message);
+    }
   };
 
   return (
-    <div>
-      <label>Hijri Date:</label>
-      <input
-        type="text"
-        value={hijriDate}
-        onChange={(e) => setHijriDate(e.target.value)}
-        className='datepicker-input'
-      />
-      <div className="conc_sec">
-        <button onClick={convertToGregorian}>Convert to Gregorian</button>
+    <div className="App">
+      <p><img src={LocationIcon} alt="" />Gregorian to Hijri Converter</p>
+         <label>
+        <input
+          type="text"
+          value={hijriDate}
+          onChange={(e) => setHijriDate(e.target.value)}
+          className='datepicker-input'
 
+        />
+      </label>
+
+      <div className="conc_sec">
+        <button onClick={convertDate}>Convert to Gregorian</button>
       </div>
+      {gregorianDate && (
+        <p>
+          Gregorian Date: <strong>{gregorianDate}</strong>
+        </p>
+      )}
     </div>
   );
-};
+}
 
-export default DateConverter;
+export default App;

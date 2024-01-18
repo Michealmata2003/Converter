@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import HijrahDate from 'hijrah-date';
 import { hijriMonthNames } from './monthName';
+import LocationIcon from '../Assets/LocationIcon.svg'
+
 
 function GregoriantoHijriConverter() {
     const [hijriDate, setHijriDate] = useState('');
@@ -26,12 +28,17 @@ function GregoriantoHijriConverter() {
     return (
         <div>
             <div style={{ width: '100%' }}>
-                <input
-                    type="date"     
-                    value={gregorianDate}
-                    onChange={(e) => setGregorianDate(e.target.value)}
-                    className='datepicker-input'
-                />
+                <p><img src={LocationIcon} alt="" />Gregorian to Hijri Converter</p>
+                <h5>Type a Date to Convert</h5>
+                <label>
+                    <input
+                        type="text"
+                        value={gregorianDate}
+                        onChange={(e) => setGregorianDate(e.target.value)}
+                        className='datepicker-input'
+                    />
+                </label>
+
             </div>
             <div className="conc_sec">
                 <button onClick={convertToHijri}>Convert to Hijri</button>

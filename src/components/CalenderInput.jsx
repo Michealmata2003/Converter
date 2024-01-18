@@ -1,26 +1,35 @@
 import React, { useState } from 'react';
-import LocationIcon from '../Assets/LocationIcon.svg'
 import GregoriantoHijriConverter from './ConvertGregorian';
 import HijriToGregorianConverter from './ConvertHijri';
+import LocationIcon from '../Assets/LocationIcon.svg'
 
 
 
 const CalenderInput = () => {
-    const [switchCalender, setSwitchCalender] = useState()
+    const [switchCalender, setSwitchCalender] = useState(true)
+
+    const handleSwitchCalender = () => {
+        setSwitchCalender(!switchCalender)
+
+
+    }
 
     return (
         <div className="d-flex" >
             <div className="app">
+
                 <div className='conc_sec'>
-                    <button>switch</button>
+                    <button onClick={handleSwitchCalender}>switch</button>
                 </div>
-                <p><img src={LocationIcon} alt="" />Gregorian to Hijri Converter</p>
-                <h5>Select a Date to Convert</h5>
+
                 <div className="app-container d-flex">
                     <div className="month-select">
-                        {/* <GregoriantoHijriConverter /> */}
-                        <HijriToGregorianConverter />
-
+                        {
+                            switchCalender ?
+                                <GregoriantoHijriConverter />
+                                :
+                                <HijriToGregorianConverter />
+                        }
                     </div>
                 </div>
             </div>
