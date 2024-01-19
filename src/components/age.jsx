@@ -46,7 +46,10 @@ const Age = ({onAgeData}) => {
     };
 
     return (
-        <div>
+        <div style={{
+            width: '80%', justifyContent: 'space-between',
+            margin: 'auto'
+          }}>
             <div style={{ padding: '30px',backgroundColor:'#ffffff'} }>
                 <div className='ageContainer'>
                     <DateofBirth birthDate={birthDate} setBirthDate={setBirthDate} />

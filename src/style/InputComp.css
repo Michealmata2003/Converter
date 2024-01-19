@@ -19,10 +19,12 @@
   height: 100%;
   background-size: cover;
   background-position: center;
+  width: 100%;
 }
 .main_result {
   position: relative;
   padding-top: 25%;
+  width: 100%;
 }
 .result_comp {
   height: 400px;
@@ -119,7 +121,7 @@
  
 }
 .input_comp {
-  width: 80%;
+  width: 100%;
   margin: auto;
   justify-content: center;
   align-items: center;
@@ -127,13 +129,13 @@
   box-shadow: 0px 6px 12px 0px #2337504d;
   position: absolute;
   top: 25%;
-  left: 10%;
+  left: 0%;
   z-index: 4;
 }
 
 .input_comp nav {
   display: flex;
-  width: 100%;
+  width: 80%;
   justify-content: space-between;
   text-align: center;
   margin: auto;
@@ -185,14 +187,14 @@
   justify-content: center !important;
   align-items: center !important;
 }
-
+/* /*  */
 .app {
-  width: 100%;
+  width: 80%;
   background-color: var(--box-bg);
   padding: 25px;
   border-radius: 8px;
   box-shadow: var(--box-shadow);
-}
+} */
 .ageContainer section {
   display: flex;
   justify-content: space-between;

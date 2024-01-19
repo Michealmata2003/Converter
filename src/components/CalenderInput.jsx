@@ -6,14 +6,33 @@ import html2canvas from 'html2canvas';
 
 
 
-const CalenderInput = () => {
+const CalenderInput = ({
+    hijriLanguagex,
+    gregorianLanguagex,
+    onGregorianLanguage,
+    onHijriLanguage,
+    onHijriLanguageNameDate,
+    onHijriLanguageNameYear,
+    onHijriLanguageNameMonth,
+}) => {
 
     const [switchCalender, setSwitchCalender] = useState(true)
-    const [hijriLanguage, setHijriLanguage] = useState(null)
+
+    const [hijriLanguage, setHijriLanguage] = useState('')
+
     const [hijriLanguageNameDate, setHijriLanguageNameDate] = useState(null)
     const [hijriLanguageNameYear, setHijriLanguageNameYear] = useState(null)
     const [hijriLanguageNameMonth, setHijriLanguageNameMonth] = useState(null)
-    const [gregorianLanguage, setGregorianLanguage] = useState(null)
+
+
+    // const [gregorianDateYear, setGregorianDateYear] = useState('');
+    // const [gregorianDateMonth, setGregorianDateMonth] = useState('');
+    // const [gregorianDateDay, setGregorianDateDay] = useState('');
+    // const [gregorianDateName, setGregorianDateName] = useState('');
+
+
+
+    const [gregorianLanguage, setGregorianLanguage] = useState('')
 
     const componentRef = useRef(null);
 
@@ -33,10 +52,28 @@ const CalenderInput = () => {
         setHijriLanguage(data)
     }
 
+    // from  the ConvertHijri file
+    // const handleGregorianDataDate = (data) => {
+    //     setGregorianDateDay(data);
+    // };
+    // const handleGregorianDataYear = (data) => {
+    //     setGregorianDateYear(data);
+    // };
 
-    const handleGregorianData = (data) => {
-        setGregorianLanguage(data);
+    // const handleGregorianDataMonth = (data) => {
+    //     setGregorianDateMonth(data);
+    // };
+
+    // const handleGregorianLanguageName = (data) => {
+    //     setGregorianDateName(data)
+    // }
+
+    const handleGregorianData = (newGregorianData) => {
+        setGregorianLanguage(newGregorianData);
+        console.log(newGregorianData);
     };
+
+    // for switching components
 
     const handleSwitchCalender = () => {
         setSwitchCalender(!switchCalender)
@@ -56,7 +93,7 @@ const CalenderInput = () => {
         a.click();
     };
     return (
-        <div>
+        <div >
             <div className="d-flex" >
                 <div className="app">
 
@@ -64,7 +101,7 @@ const CalenderInput = () => {
                         <button onClick={handleSwitchCalender}>switch</button>
                     </div>
 
-                    <div className="app-container d-flex">
+                    <div className="app-container">
                         <div className="month-select">
                             {
                                 switchCalender ?
@@ -75,19 +112,25 @@ const CalenderInput = () => {
                                         monthNamejri={handleHijriLanguageName}
                                     />
                                     :
-                                    <HijriToGregorianConverter onGregorianData={handleGregorianData} />
+                                    <HijriToGregorianConverter
+                                        onGregorianData={handleGregorianData}
+                                    // onGregorianDataMonths={handleGregorianDataMonth}
+                                    // onGregorianDatayears={handleGregorianDataYear}
+                                    // onGregorianDataDate={handleGregorianDataDate}
+                                    // onGregorianDataName={handleGregorianLanguageName}
+                                    />
                             }
                         </div>
                     </div>
                 </div>
             </div>
+
+
             <div className='second_bg'>
                 {hijriLanguage && (
                     <div>
                         <div className='main_result'>
-                            <div className='result_comp'
-                            //  ref={componentRef}
-                             >
+                            <div className='result_comp' ref={componentRef} >
                                 <span className='hijri_result'>
                                     <h1>{hijriLanguageNameDate}</h1>
                                     <h1>{hijriLanguage}</h1>
@@ -109,9 +152,34 @@ const CalenderInput = () => {
                 )}
 
             </div>
+            <div className='second_bg'>
+                {gregorianLanguage &&
+                    (
+                        <div className='main_result'>
+                            <div className='result_comp' ref={componentRef} >
+                                <span className='hijri_result'>
+                                    <h1>{gregorianLanguage}</h1>
+                                </span>
+                                <p>There might be a small probability of a day error</p>
+                                <button>Go to Islamic Calender</button>
+
+
+                            </div>
+                            <div style={{ width: '100%', justifyContent: 'center', margin: 'auto', display: 'flex', paddingTop: '20px' }}>
+                                <button onClick={captureComponent} style={{ zIndex: 7 }}>Save as Image</button>
+                            </div>
+                        </div >
+                    )
+                }
+            </div>
         </div>
+
+
 
     )
 }
 
 export default CalenderInput;
+
+
+

@@ -5,6 +5,7 @@ import LocationIcon from '../Assets/LocationIcon.svg'
 
 
 function GregoriantoHijriConverter({onHijriDataDate,onHijriDataYear,onHijriDataMonth  , monthNamejri}) {
+    
     const [hijriDateDay, setHijriDateDay] = useState('');
     const [hijriDateYear, setHijriDateYear] = useState('');
     const [hijriDateMonth, setHijriDateMonth] = useState('');
@@ -27,6 +28,7 @@ function GregoriantoHijriConverter({onHijriDataDate,onHijriDataYear,onHijriDataM
             setHijriDateDay(onHijriDataDate)
             setHijriDateYear(onHijriDataYear)
             setHijriDateMonth(onHijriDataMonth)
+
             setHijriMonthName(monthNamejri)
 
             console.log(hijriMonthName)
