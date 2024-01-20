@@ -21,10 +21,19 @@
   background-position: center;
   width: 100%;
 }
+.age {
+  width: 80%;
+  justify-content: space-between;
+  margin: auto;
+  box-shadow: 0px 6px 12px 0px #2337504d;
+}
 .main_result {
   position: relative;
-  padding-top: 25%;
+  padding-top: 18%;
   width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../Assets/second_bg.png");
 }
 .result_comp {
   height: 400px;
@@ -53,7 +62,6 @@
   display: flex;
   text-align: center;
   margin: auto;
-
 }
 .age_result div {
   background-color: #ffffff;
@@ -65,24 +73,21 @@
   display: flex;
   text-align: center;
   margin: auto;
-
 }
 .age_result div p {
   color: #000000;
   font-size: 22px;
   font-weight: 400;
   word-spacing: 3px;
-
 }
-.age_result div p span{
+.age_result div p span {
   color: #176ede;
   text-decoration: underline;
   font-size: 16px;
   font-weight: 400;
-
 }
 
-.hijri_result{
+.hijri_result {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -111,14 +116,13 @@
   line-height: 24px;
   letter-spacing: 0em;
   padding: 11px 0px;
-  }
+}
 .main_result div p:nth-child(even) {
   width: 100%;
 }
 .main_result div p:nth-child(odd) {
   background-color: #ffffff;
   width: 100%;
- 
 }
 .input_comp {
   width: 100%;
@@ -126,7 +130,6 @@
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  box-shadow: 0px 6px 12px 0px #2337504d;
   position: absolute;
   top: 25%;
   left: 0%;
@@ -175,7 +178,6 @@
   justify-content: center;
 }
 
-
 .ageContainer {
   display: flex;
   justify-content: space-between;
@@ -187,14 +189,13 @@
   justify-content: center !important;
   align-items: center !important;
 }
-/* /*  */
 .app {
   width: 80%;
   background-color: var(--box-bg);
   padding: 25px;
   border-radius: 8px;
-  box-shadow: var(--box-shadow);
-} */
+  box-shadow: 0px 6px 12px 0px #2337504d;
+}
 .ageContainer section {
   display: flex;
   justify-content: space-between;
@@ -263,10 +264,10 @@
   color: var(--txt-color);
   height: 100%;
 } */
-
+/* 
 p {
   font-size: 14px;
-}
+} */
 
 ::-webkit-scrollbar {
   width: 5px;
@@ -403,7 +404,6 @@ li {
   margin-bottom: 5px;
 }
 
-
 .datepicker {
   width: 100%;
   display: flex;
@@ -432,3 +432,34 @@ li {
   padding: 0;
   cursor: pointer;
 } */
+
+/* Styling for Timeline */
+
+.timeline_container {
+  width: 100%;
+}
+/* .timeline {
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+} */
+
+.timeline div {
+  width: 80%;
+}
+.timeline div h5 {
+  font-size: 15px;
+  font-weight: 700;
+}
+.timeline div p {
+  font-size: 6px;
+  color: #cfd1d2;
+}
+/* .timeline-item{
+  display: flex;
+} */
+/* .data-above{
+  display: flex;
+} */
+.data-above-container {
+  display: flex;
+}

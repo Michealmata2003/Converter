@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import HijrahDate from 'hijrah-date';
-import { hijriMonthNames } from './monthName';
-import LocationIcon from '../Assets/LocationIcon.svg'
+import { hijriMonthNames } from '../calculator/monthName';
+import LocationIcon from '../../Assets/LocationIcon.svg'
 
 
 function GregoriantoHijriConverter({onHijriDataDate,onHijriDataYear,onHijriDataMonth  , monthNamejri}) {
@@ -35,6 +35,7 @@ function GregoriantoHijriConverter({onHijriDataDate,onHijriDataYear,onHijriDataM
         } else {
             console.error('Invalid Hijrah date.');
         }
+        setGregorianDate('')
     };
 
     return (
@@ -48,18 +49,16 @@ function GregoriantoHijriConverter({onHijriDataDate,onHijriDataYear,onHijriDataM
                         value={gregorianDate}
                         onChange={(e) => setGregorianDate(e.target.value)}
                         className='datepicker-input'
+                        placeholder=' date/january/2022'
                     />
                 </label>
+                {/* <p>Type in date in the format: date/january/2022</p> */}
 
             </div>
             <div className="conc_sec">
                 <button onClick={convertToHijri}>Convert to Hijri</button>
             </div>
-            <div>
-                <label>Hijri Date:</label>
-                <div>{hijriDateYear}</div>
-                <div>{hijriMonthName}</div>
-            </div>
+            
         </div>
     );
 }

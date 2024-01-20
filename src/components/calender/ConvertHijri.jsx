@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import HijriConverter from 'hijri-converter';
-import { gregorianMonthNames } from './monthName';
-import LocationIcon from '../Assets/LocationIcon.svg';
+import { gregorianMonthNames } from '../calculator/monthName';
+import LocationIcon from '../../Assets/LocationIcon.svg';
 
 function HijriToGregorianConverter({
   onGregorianData,
@@ -38,6 +38,7 @@ function HijriToGregorianConverter({
     } catch (error) {
       console.error('Error converting date:', error.message);
     }
+    setHijriDate('')
   };
 
   const [splitMonths, splitYears, splitDays] = gregorianDate.split('-');
@@ -45,10 +46,12 @@ function HijriToGregorianConverter({
   return (
     <div className="App">
       <p><img src={LocationIcon} alt="" />Hijri to Gregorian Converter</p>
+      <h5>Type a Date to Convert</h5>
       <label>
         <input
           type="text"
           value={hijriDate}
+          placeholder=' year/month/day'
           onChange={(e) => setHijriDate(e.target.value)}
           className='datepicker-input'
         />

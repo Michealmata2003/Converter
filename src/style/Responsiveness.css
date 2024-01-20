@@ -1,0 +1,36 @@
+/* This is for tablet */
+@media (max-width:768px) {
+    .age{
+        width: 95%;
+    }
+    .app{
+        width: 95%;
+    }
+    .input_comp nav{
+        width: 95%;
+    }
+     
+}
+/* This is for mobile */
+
+@media (max-width:500px) {
+    .ageContainer{
+        display: block;
+    }
+    .ageContainer section {
+        display: none;
+    }
+    .age_nav{
+        display: block;
+        padding: 0px;
+    }
+    .cal_nav{
+        display: block;
+        padding: 0px;
+
+    }
+    .main_result{
+        padding-top: 55%;
+
+    }
+}

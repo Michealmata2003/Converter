@@ -15,7 +15,7 @@ const CurrentDate = (props) => {
         className='datepicker-input'
         type="date"
         id="currentDate"
-        value={props.currentDate}
+        value={props.currentDate || ''}
         onChange={(e) => {props.setCurrentDate(e.target.value)}}
       />
       

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import DateofBirth from './DateofBirth';
 import CurrentDate from './CurrentDate';
-import AttentionIcon from '../Assets/Attention.svg';
+import AttentionIcon from '../../Assets/Attention.svg';
+import '../../style/Responsiveness.css'
 
 
 const Age = ({onAgeData}) => {
@@ -46,10 +47,7 @@ const Age = ({onAgeData}) => {
     };
 
     return (
-        <div style={{
-            width: '80%', justifyContent: 'space-between',
-            margin: 'auto'
-          }}>
+        <div className='age'>
             <div style={{ padding: '30px',backgroundColor:'#ffffff'} }>
                 <div className='ageContainer'>
                     <DateofBirth birthDate={birthDate} setBirthDate={setBirthDate} />

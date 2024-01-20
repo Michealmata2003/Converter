@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import GregoriantoHijriConverter from './ConvertGregorian';
 import HijriToGregorianConverter from './ConvertHijri';
 import html2canvas from 'html2canvas';
+import '../../style/Responsiveness.css'
+
 
 
 
@@ -124,8 +126,6 @@ const CalenderInput = ({
                     </div>
                 </div>
             </div>
-
-
             <div className='second_bg'>
                 {hijriLanguage && (
                     <div>
@@ -143,7 +143,6 @@ const CalenderInput = ({
 
                             </div>
                         </div>
-
                         <div style={{ width: '100%', justifyContent: 'center', margin: 'auto', display: 'flex', paddingTop: '20px' }}>
                             <button onClick={captureComponent} style={{ zIndex: 7 }}>Save as Image</button>
                         </div>
@@ -162,8 +161,6 @@ const CalenderInput = ({
                                 </span>
                                 <p>There might be a small probability of a day error</p>
                                 <button>Go to Islamic Calender</button>
-
-
                             </div>
                             <div style={{ width: '100%', justifyContent: 'center', margin: 'auto', display: 'flex', paddingTop: '20px' }}>
                                 <button onClick={captureComponent} style={{ zIndex: 7 }}>Save as Image</button>
@@ -173,9 +170,6 @@ const CalenderInput = ({
                 }
             </div>
         </div>
-
-
-
     )
 }
 

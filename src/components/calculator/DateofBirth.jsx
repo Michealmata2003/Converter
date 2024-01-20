@@ -13,7 +13,7 @@ const DateofBirth = (props) => {
       className='datepicker-input'
         type="date"
         id="birthDate"
-        value={props.birthDate}
+        value={props.birthDate || ''}
         onChange={(e) => {props.setBirthDate(e.target.value)}}
       />
     </div>

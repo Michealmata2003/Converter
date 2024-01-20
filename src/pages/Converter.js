@@ -1,16 +1,19 @@
 import React, { useState, useRef } from 'react';
 import '../style/InputComp.css';
+import '../style/Responsiveness.css';
 import ageIcon from '../Assets/age.svg';
 import calenderIcon from '../Assets/calender.svg';
 import timelineIcon from '../Assets/Timeline.svg';
-import Age from '../components/age';
-import Calender from '../components/calender';
-import Timeline from '../components/timeline';
+import Age from '../components/calculator/age';
+import Calender from '../components/calender/calender';
+import Timeline from '../components/timeline/timeline';
 import html2canvas from 'html2canvas';
+import RealTimeline from '../components/timeline/RealTimeline';
 
 
 const Converter = () => {
   const [gregorianLanguageParent, setGregorianLanguageParent] = useState('');
+
   const [hijriLanguageParent, setHijriLanguageParent] = useState('');
   const [hijriLanguageNameDateParent, setHijriLanguageNameDateParent] = useState(null);
   const [hijriLanguageNameYearParent, setHijriLanguageNameYearParent] = useState(null);
@@ -58,6 +61,7 @@ const Converter = () => {
   }
   const handleAgeData = (data) => {
     setAgeData(data);
+    
   };
 
   const handlehijriLanguagex = (data) => {
@@ -73,6 +77,9 @@ const Converter = () => {
         downloadImage(dataURL);
       });
     }
+    setAgeData(null)
+    setHijriLanguageParent('')
+    setGregorianLanguageParent('')
   };
   const downloadImage = (dataURL) => {
     const a = document.createElement('a');
@@ -101,7 +108,7 @@ const Converter = () => {
   };
   return (
     
-<div style={{ position: 'relative' }}>
+<div>
   <div className='main_bg'>
     <div>
       <div className='input_comp' >
@@ -138,7 +145,7 @@ const Converter = () => {
           />
             : null
           }
-          {showTimelineComp ? <Timeline /> : null}
+          {showTimelineComp ? <RealTimeline /> : null}
         </div>
       </div>
     </div>
@@ -181,7 +188,7 @@ const Converter = () => {
     )}
 
   </div>
-  <div >
+  <div className='secong_bg'>
     {hijriLanguageParent && (
       <div className='main_result'>
         <div>
@@ -199,12 +206,7 @@ const Converter = () => {
     {gregorianLanguageParent && <p>Gregorian Language: {gregorianLanguageParent}</p>
     }
     </div>
-    {/* {gregorianmi && (
-          <div>{gregorianmi}</div>
-        )} */}
   </div>
-
-
 </div>
   )
 }
